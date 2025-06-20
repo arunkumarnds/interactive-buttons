@@ -5,7 +5,7 @@ document.querySelectorAll('.btn').forEach(button => {
     const color = window.getComputedStyle(button).backgroundColor;
     overlay.style.backgroundColor = color;
 
-    overlay.style.animation = 'none';
+    overlay.classList.remove('fill');
     overlay.style.height = '0';
     // trigger reflow to restart animation
     void overlay.offsetWidth;

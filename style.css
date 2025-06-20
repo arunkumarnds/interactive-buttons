@@ -13,13 +13,6 @@ body {
     gap: 20px;
   }
 
-  .clone-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
-  }
-  
   .btn {
     padding: 12px 24px;
     border: none;

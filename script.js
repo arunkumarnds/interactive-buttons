@@ -1,26 +1,30 @@
+// script.js
 const overlay = document.getElementById('overlay');
-
 const buttons = document.querySelectorAll('.btn');
 
+// Kick off the fill on button click
 buttons.forEach(button => {
   button.addEventListener('click', () => {
-    const color = window.getComputedStyle(button).backgroundColor;
+    const color = getComputedStyle(button).backgroundColor;
     overlay.style.backgroundColor = color;
 
-    // disable all buttons during the fill animation
-    buttons.forEach(btn => (btn.disabled = true));
+    // Disable all buttons immediately
+    buttons.forEach(btn => btn.disabled = true);
 
+    // Restart the fill animation
     overlay.classList.remove('fill');
     overlay.style.height = '0';
-    // trigger reflow to restart animation
+    // force reflow
     void overlay.offsetWidth;
     overlay.classList.add('fill');
-
-    setTimeout(() => {
-      overlay.classList.remove('fill');
-      overlay.style.height = '0';
-      // re-enable buttons once animation completes
-      buttons.forEach(btn => (btn.disabled = false));
-    }, 3000); // 2s animation + 1s pause
   });
+});
+
+// When the fill animation ends, wait 1s, then reset and re-enable
+overlay.addEventListener('animationend', () => {
+  setTimeout(() => {
+    overlay.classList.remove('fill');
+    overlay.style.height = '0';
+    buttons.forEach(btn => btn.disabled = false);
+  }, 1000); // 1s pause after the 2s fill
 });

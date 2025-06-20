@@ -1,48 +1,41 @@
+/* style.css */
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    height: 100vh;
-    align-items: center;
-    justify-content: center;
-    background-color: #f3f4f6;
-    margin: 0;
-  }
-  
-  .container {
-    display: flex;
-    gap: 20px;
-  }
-
-  .btn {
-    padding: 12px 24px;
-    border: none;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: transform 0.2s;
-  }
-  
-  .btn:active {
-    transform: scale(0.95);
-  }
-
-  .btn:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-  }
-  
-  .red {
-    background-color: #e74c3c;
-  }
-  
-  .green {
-    background-color: #2ecc71;
-  }
-  
-.blue {
-  background-color: #3498db;
+  font-family: Arial, sans-serif;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3f4f6;
+  margin: 0;
 }
+
+.container {
+  display: flex;
+  gap: 20px;
+}
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.red   { background-color: #e74c3c; }
+.green { background-color: #2ecc71; }
+.blue  { background-color: #3498db; }
 
 #overlay {
   position: fixed;
@@ -59,10 +52,6 @@ body {
 }
 
 @keyframes fill {
-  from {
-    height: 0;
-  }
-  to {
-    height: 100%;
-  }
+  from { height: 0; }
+  to   { height: 100%; }
 }
